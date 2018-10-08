@@ -1,9 +1,12 @@
 package Clases;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.*;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -46,7 +49,7 @@ public class VentanaComp extends JFrame {
 		barra.add(j2, BorderLayout.CENTER);
 		
 		//Botones 
-		
+		JButton Prueba= new JButton("Haz click");
 		JButton Stats= new JButton("Stats");
 		JButton Interactuar = new JButton("Interactuar");
 		JButton Seguir = new JButton("Seguir ->");
@@ -61,11 +64,23 @@ public class VentanaComp extends JFrame {
 		menu.add(Stats);
 		menu.add(Interactuar);
 		menu.add(Seguir);
+		menu.add(Prueba);
 		
 		menu.add(Inventario);
 		
 		
 		cp.add(main);
+		
+		//Action Listener
+		
+		Prueba.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				System.out.println("Hola");
+			}
+		}
+		);
 		
 		
 	}
