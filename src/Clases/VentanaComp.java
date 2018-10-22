@@ -81,6 +81,14 @@ public class VentanaComp extends JFrame {
 			}
 		}
 		);
+		Interactuar.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				juego.setBackground(Color.BLUE);;
+			}
+		}
+		);
 		
 		
 	}
