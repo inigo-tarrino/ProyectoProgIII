@@ -17,13 +17,14 @@ public class VentanaComp extends JFrame {
 
 	public VentanaComp() 
 	{
+		//Metodo necesario
 		Container cp = this.getContentPane();
 		cp.setLayout(new BorderLayout());
 		
 		//Paneles
 		
 		JPanel main = new JPanel();
-		main.setLayout(new GridLayout(1, 4));
+		main.setLayout(new GridLayout(1, 4)); //Divide el panel main en 1 columna y 4 filas
 	
 		JPanel juego= new JPanel();
 		juego.setBackground(Color.BLACK);
@@ -68,11 +69,11 @@ public class VentanaComp extends JFrame {
 		
 		menu.add(Inventario);
 		
-		
+		//Es dios-método necesario
 		cp.add(main);
 		
 		//Action Listener
-		
+		//Pruebas con hilos
 		Prueba.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -89,7 +90,14 @@ public class VentanaComp extends JFrame {
 			}
 		}
 		);
-		
+		Seguir.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				j2.setText("Combate");
+			}
+		}
+		);
 		
 	}
 
