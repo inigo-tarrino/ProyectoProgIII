@@ -1,4 +1,4 @@
-package Clases;
+package PJ;
 
 public class Enemigo {
 

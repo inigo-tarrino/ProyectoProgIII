@@ -1,4 +1,4 @@
-package Clases;
+package PJ;
 
 public abstract class Enemigos {
 
