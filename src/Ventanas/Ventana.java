@@ -19,7 +19,7 @@ public class Ventana extends JFrame {
 		
 		//Ventana Main
 		
-		VentanaMain v2= new VentanaMain();
+		VMain v2= new VMain();
 		v2.setSize(100, 600);
 		v2.setVisible(true);
 	//	v2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
