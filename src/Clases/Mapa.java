@@ -31,11 +31,22 @@ public class Mapa {
 	
 	public void ItMapa() //Mejor Hacer uso de un ArrayList
 	{
-		Sala n = new Sala();
-		mapa.add(n);//Hay que crear cada sala individualmente
+		//Mejor un for
+		Sala n1 = new Sala();
+		Sala n2 = new Sala();
+		Sala n3 = new Sala();
+		Sala n4 = new Sala();
+		Sala n5 = new Sala();
+		mapa.add(n1);//Hay que crear cada sala individualmente
+		mapa.add(n2);
+		mapa.add(n3);
+		mapa.add(n4);
+		mapa.add(n5);
+			
+		}
 	
 	}
 	
 	
 	
-}
+
