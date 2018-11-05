@@ -11,24 +11,30 @@ public class Mapa {
 	ArrayList<Integer> map = new ArrayList<Integer>();
 	ArrayList<Sala> mapa = new ArrayList<Sala>();
 	private String nombre;
-	Sala Mapa;
+
 	
-	public Mapa(ArrayList<Integer> map, String nombre) {
+	public Mapa(ArrayList<Integer> map, ArrayList<Sala> mapa, String nombre) {
 		super();
 		this.map = map;
+		this.mapa = mapa;
 		this.nombre = nombre;
+		
 	}
-	public Mapa() {
 
+	public Mapa() {
+		super();
 		this.map = null;
-		this.nombre = "Por defecto";
+		this.mapa = null;
+		this.nombre = "";
+		
 	}
+	
 	
 	@Override
 	public String toString() {
-		return "Mapa [map=" + map + ", nombre=" + nombre + "]";
+		return "Mapa [map=" + map + ", mapa=" + mapa + ", nombre=" + nombre + "]";
 	}
-	
+
 	public void ItMapa() //Mejor Hacer uso de un ArrayList
 	{
 		//Mejor un for
