@@ -37,5 +37,9 @@ public class Sala {
 	public void setDescsala(String descsala) {
 		this.descsala = descsala;
 	}
+	@Override
+	public String toString() {
+		return "Sala [nums=" + nums + ", tsala=" + tsala + ", descsala=" + descsala + "]";
+	}
 	
 }
