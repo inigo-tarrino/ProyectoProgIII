@@ -42,8 +42,9 @@ public class VentanaMain extends JFrame{
 			JPanel panelboton1= new JPanel(new GridBagLayout());//Pnael que contiene los botones
 			panelboton1.setBackground(new Color(0, 0, 0, 55));
 	
-			panelboton1.setLayout(new GridLayout(2, 2)); //Divide el panel main en 1 columna y 4 filas
+			panelboton1.setLayout(new GridLayout(3, 1)); //Divide el panel main en 1 columna y 3 filas
 			
+		
 			JPanel panelboton2= new JPanel();//Panel padre
 			panelboton2.setBackground(new Color(0, 0, 0, 55));
 			JPanel panelboton3= new JPanel();
@@ -77,7 +78,7 @@ public class VentanaMain extends JFrame{
 			panelboton1.add(botoncreditosJuego);
 			//panelboton2.add(botoncomoJugar);
 			//panelboton3.add(botoncreditosJuego);
-			panelboton2.add(panelboton1);
+			panelboton2.add(panelboton1, BorderLayout.SOUTH);
 			cp.add(panelboton2, BorderLayout.SOUTH);
 			//cp.add(panelboton2);
 			//cp.add(panelboton3);
