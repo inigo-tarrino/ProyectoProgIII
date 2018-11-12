@@ -4,10 +4,10 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 
-public class ImagenInventario extends javax.swing.JPanel {
+public class ImagenInventario1 extends javax.swing.JPanel {
 	private static final long serialVersionUID = 1L;
 	
-public ImagenInventario() {
+public ImagenInventario1() {
 	this.setSize(1000, 600);
 }
 	
