@@ -51,18 +51,18 @@ public class VentanaMain extends JFrame{
 			
 			JButton botonJugar = new JButton("Jugar");
 			botonJugar.setFont(new Font("ComicSans", Font.PLAIN, 30));
-			JButton botoncomoJugar = new JButton("Â¿CÃ³mo jugar?");
+			JButton botoncomoJugar = new JButton("¿Cómo jugar?");
 			//Button crÃ©ditos del Juego
-			JButton botoncreditosJuego = new JButton("CrÃ©ditos");
+			JButton botoncreditosJuego = new JButton("Créditos");
 			botoncreditosJuego.addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					JOptionPane.showMessageDialog(rootPane, "Este juego fue programado durante el curso 2018-2019 por: \n"
-							+ "IÃ±igo TarriÃ±o Ros \n"
+							+ "Iñigo Tarriño Ros \n"
 							+ "Jokin Martin Egia \n"
 							+ "Sergio Cogollos Del Campo\n"
-							+ "Estudiantes de 2. de IngenierÃ­a InformÃ¡tica de la Universidad de Deusto");
+							+ "Estudiantes de 2. de Ingeniería Informática de la Universidad de Deusto");
 					
 				}});
 			

@@ -54,6 +54,7 @@ public class VentanaComp extends JFrame {
 		JButton Stats= new JButton("Stats");
 		JButton Interactuar = new JButton("Interactuar");
 		JButton Seguir = new JButton("Seguir ->");
+		JButton Volver = new JButton("<- Volver");
 		JButton Inventario = new JButton("Inventario");
 		
 		Stats.setBackground(Color.WHITE);
@@ -65,6 +66,7 @@ public class VentanaComp extends JFrame {
 		menu.add(Stats);
 		menu.add(Interactuar);
 		menu.add(Seguir);
+		menu.add(Volver);
 		menu.add(Prueba);
 		
 		menu.add(Inventario);
