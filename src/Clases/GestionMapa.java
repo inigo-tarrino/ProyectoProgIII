@@ -13,11 +13,11 @@ public class GestionMapa {
 		{
 			mapa.add(i);
 		}
-		for (int i = 0; i < 10; i++) {
+		for (int nsalas = 0; nsalas < 10; nsalas++) {
 			Sala N1  = new Sala();
 			mapa2.add(N1);
 		}
 	System.out.println(m1);
-
+	
 	}
 }

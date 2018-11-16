@@ -2,22 +2,33 @@ package PJ;
 
 public class Personaje {
 
+	public int monedero;
 	private int hp;
 	private int dmg;
 	private String nom;
 
-	public Personaje(int hp, int dmg, String nom) {
+	public Personaje(int hp, int dmg, String nom,int monedero) {
 		super();
+		this.monedero = monedero;
 		this.hp = hp;
 		this.dmg = dmg;
 		this.nom = nom;
 	}
 	
 	public Personaje() {
-	
+		
+		this.monedero = 0;
 		this.hp = 0;
 		this.dmg = 0;
 		this.nom = " ";
+	}
+
+	public int getMonedero() {
+		return monedero;
+	}
+
+	public void setMonedero(int monedero) {
+		this.monedero = monedero;
 	}
 
 	public int getHp() {

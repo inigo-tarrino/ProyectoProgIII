@@ -1,10 +1,10 @@
 package Clases;
-//Iterador sala NO SE SI ESCOGER ESTA Y HACER EL ARRAY DE SALAS AQUI O EN UNA CLASE UNICA CON CONSTRUCTOR
-//GETTERS Y SETTERS LLAMADA "Sala"
 //Igual aqui pondre los metodos dependiendo de cada tipo de sala
-public class ItSala 
+public class ItSala
+//Tengio que saber como pasar los metodos de cada tipo de clase a esta que va a ser la que
+//ejecute el metodo dependiendo de la sala
 {
 	
-	
+
 	
 }

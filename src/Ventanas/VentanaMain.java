@@ -108,7 +108,8 @@ public class VentanaMain extends JFrame{
 		cp.add(centro, BorderLayout.CENTER);
 		*/
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setBounds(500, 500, 1000, 600);
+		//this.setBounds(500, 500, 1000, 600);
+		this.setBounds(0, 0, 1280, 900);
 		this.setTitle("Inicio RogeLike Dungeons");
 		this.pack();
 		this.setVisible(true);
