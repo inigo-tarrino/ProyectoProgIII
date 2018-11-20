@@ -21,6 +21,7 @@ public class CargaMapa {
 		Sala s8 = new Sala(0, Salas.COMBATE, 10);
 		Sala s9 = new Sala(0, Salas.COMBATE, 10);
 		Sala s10 = new Sala(0, Salas.COMBATE, 10);
+		Sala s11 = new Sala(0, Salas.COMBATE, 10);
 		//Llena el array
 		
 		Map1.add(s1);
@@ -33,6 +34,7 @@ public class CargaMapa {
 		Map1.add(s8);
 		Map1.add(s9);
 		Map1.add(s10);
+		Map1.add(s11);
 		
 	}
 	public static void main(String[] args) {
