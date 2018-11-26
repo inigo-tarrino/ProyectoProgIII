@@ -1,18 +1,11 @@
 package Motor;
 
 public class Salmethod {
-
-	int i = 0;
-	public void mcombate() 
-	{
-		
+	
+	
+	
+	public static void main(String[] args) {
+		CargaMapa b1 = new CargaMapa(Sala[] map1);
+		System.out.println(b1);
 	}
-	public void mtesoro()
-	
-	
-	{
-	
-	}
-	
-	}
-
+}
