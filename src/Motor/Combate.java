@@ -1,5 +1,13 @@
 package Motor;
 
-public class Combate {
+public class Combate
+{
+
+	
+	
+	
+	
+	
+
 
 }
