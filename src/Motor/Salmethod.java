@@ -8,26 +8,29 @@ public class Salmethod {
 	
 	public static void main(String[] args) {
 		CargaMapa b1 = new CargaMapa();
-		Sala i = new Sala(0, Salas.COMBATE, 10);
-		Sala s2 = new Sala(0, Salas.COMBATE, 10);
-		Sala s1 = new Sala(0, Salas.COMBATE, 10);
 		
-		if(i.getTipo().equals(Salas.COMBATE)) 
-		{
-			CombateMethod.main(args);
-			
-		}
-		if(i.getTipo().equals(Salas.NADA)) 
-		{
-			System.out.println("HEY");
-		}
-		if(i.getTipo().equals(Salas.TIENDA)) 
+		for (int i = 0; i < args.length; i++) 
 		{
 			
 		}
-		if(i.getTipo().equals(Salas.TESORO)) 
+		
+		Sala j = new Sala(0, Salas.COMBATE, 10);
+		
+		if(j.getTipo().equals(Salas.COMBATE)) 
 		{
-			
+			CombateMethod.main(args);	
+		}
+		if(j.getTipo().equals(Salas.NADA)) 
+		{
+			NadaMethod.main(args);
+		}
+		if(j.getTipo().equals(Salas.TIENDA)) 
+		{
+			TiendaMethod.main(args);
+		}
+		if(j.getTipo().equals(Salas.TESORO)) 
+		{
+			TesoroMethod.main(args);
 		}
 		System.out.println(b1);
 	}
