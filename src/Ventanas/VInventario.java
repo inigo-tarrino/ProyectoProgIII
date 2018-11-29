@@ -72,7 +72,7 @@ public class VInventario extends JFrame {
 	num.add(b4);
 	
 	JPanel descnum= new JPanel();
-	ImageIcon icon = new ImageIcon("/Users/iraideegia/Downloads/Icono.png"); 
+	ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
 	JLabel label = new JLabel(icon); 
 	descnum.add(label);
 	
