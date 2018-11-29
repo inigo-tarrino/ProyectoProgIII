@@ -8,13 +8,14 @@ public class Salmethod {
 	
 	public static void main(String[] args) {
 		CargaMapa b1 = new CargaMapa();
-		Sala i = new Sala(0, Salas.NADA, 10);
+		Sala i = new Sala(0, Salas.COMBATE, 10);
 		Sala s2 = new Sala(0, Salas.COMBATE, 10);
 		Sala s1 = new Sala(0, Salas.COMBATE, 10);
 		
 		if(i.getTipo().equals(Salas.COMBATE)) 
 		{
-			System.out.println("HOLA");
+			CombateMethod.main(args);
+			
 		}
 		if(i.getTipo().equals(Salas.NADA)) 
 		{
