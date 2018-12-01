@@ -2,7 +2,7 @@ package Motor;
 
 import Clases.Salas;
 
-public class Sala {
+public abstract class Sala {
 
 	public int id;
 	public Salas tipo;
@@ -44,16 +44,16 @@ public class Sala {
 	public void setPts(int pts) {
 		this.pts = pts;
 	}
-
+	
+	public abstract void responde();
+	
 	@Override
 	public String toString() {
 		return "Sala [id=" + id + ", tipo=" + tipo + ", pts=" + pts + "]";
 	}
-	
-	public static void main(String[] args) {
-		Sala s1 = new Sala(0, Salas.COMBATE, 10);
+	//	Sala s1 = new Sala(0, Salas.COMBATE, 10);
 		
-	}
+	
 	
 	
 }
