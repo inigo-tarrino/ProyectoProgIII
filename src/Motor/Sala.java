@@ -51,9 +51,5 @@ public abstract class Sala {
 	public String toString() {
 		return "Sala [id=" + id + ", tipo=" + tipo + ", pts=" + pts + "]";
 	}
-	//	Sala s1 = new Sala(0, Salas.COMBATE, 10);
-		
-	
-	
 	
 }

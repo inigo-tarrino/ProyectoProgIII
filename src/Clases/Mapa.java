@@ -22,9 +22,19 @@ public class Mapa {
 	}
 
 	public Mapa() {
-		super();
 		this.map = null;
-		this.mapa = null;
+		Sala n1 = new Sala(1,Salas.COMBATE,"Hola");
+		Sala n2 = new Sala();
+		Sala n3 = new Sala();
+		Sala n4 = new Sala();
+		Sala n5 = new Sala();
+		mapa.add(n1);//Hay que crear cada sala individualmente
+		mapa.add(n2);
+		mapa.add(n3);
+		mapa.add(n4);
+		mapa.add(n5);
+		this.mapa = mapa;
+		
 		this.nombre = "";
 		
 	}
@@ -38,16 +48,13 @@ public class Mapa {
 	public void ItMapa() //Mejor Hacer uso de un ArrayList
 	{
 		//Mejor un for
-		Sala n1 = new Sala();
-		Sala n2 = new Sala();
-		Sala n3 = new Sala();
-		Sala n4 = new Sala();
-		Sala n5 = new Sala();
-		mapa.add(n1);//Hay que crear cada sala individualmente
-		mapa.add(n2);
-		mapa.add(n3);
-		mapa.add(n4);
-		mapa.add(n5);
+		for (int i = 0; i < 20; i++) {
+			
+			ArrayList<Sala> mapeo = null;
+			Sala s1 = new Sala();
+			mapeo.add(s1);
+		}
+		
 			
 		}
 	
