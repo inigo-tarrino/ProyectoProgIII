@@ -102,7 +102,18 @@ public class VentanaComp extends JFrame {
 			}
 		}
 		);
-		
+		Inventario.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				VInventario v1 = new VInventario();
+				v1.setSize(1000, 600);
+				v1.setVisible(true);
+				v1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				v1.setTitle("Inventario");
+			}
+		}
+		);
 	}
 
 }
