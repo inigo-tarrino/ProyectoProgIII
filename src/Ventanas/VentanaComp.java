@@ -13,6 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Motor.NadaMethod;
+
 public class VentanaComp extends JFrame {
 
 	public VentanaComp() 
@@ -88,7 +90,7 @@ public class VentanaComp extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				juego.setBackground(Color.BLUE);;
+				
 			}
 		}
 		);

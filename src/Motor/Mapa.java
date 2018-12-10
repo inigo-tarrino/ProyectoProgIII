@@ -3,14 +3,8 @@ package Motor;
 public class Mapa {
 
 	
-	
-
-	public void actuar() 
-	{
-
-	}
-	
 	public static void main(String[] args) {
-		
+		 CargaMapa cm1 = new CargaMapa();
+		 System.out.println(cm1);
 	}
 }

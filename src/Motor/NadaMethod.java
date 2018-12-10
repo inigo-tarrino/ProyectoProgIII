@@ -9,11 +9,11 @@ public class NadaMethod extends Sala{
 		System.out.println("Aprovecha a curarte");
 		
 	}
-//metodo dque llamara el bot√≥n interactuar
+//metodo al cual llamar· el bot√≥n interactuar
 	@Override
 	public void responde() 
 	{
-		// TODO Auto-generated method stub
+		System.out.println("AquÌ no hay nada de valor");
 		
 	}
 }

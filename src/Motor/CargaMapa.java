@@ -7,37 +7,14 @@ import Clases.Salas;
 
 public class CargaMapa {
 	
-	static Sala [] Map1;
+	Sala [] Map1;
 
 	
-	public CargaMapa(Sala[] map1) {
-		super();
-		Map1 = map1;
-		Sala s1 = new Sala(0, Salas.COMBATE, 10);
-		Sala s2 = new Sala(0, Salas.NADA, 10);
-		Sala s3 = new Sala(0, Salas.COMBATE, 10);
-		Sala s4 = new Sala(0, Salas.COMBATE, 10);
-		Sala s5 = new Sala(0, Salas.COMBATE, 10);
-		Sala s6 = new Sala(0, Salas.COMBATE, 10);
-		Sala s7 = new Sala(0, Salas.COMBATE, 10);
-		Sala s8 = new Sala(0, Salas.COMBATE, 10);
-		Sala s9 = new Sala(0, Salas.COMBATE, 10);
-		Sala s10 = new Sala(0, Salas.COMBATE, 10);
-		Sala s11 = new Sala(0, Salas.COMBATE, 10);
-		Sala s12 = new Sala(0, Salas.COMBATE, 10);
+	public CargaMapa(Sala[] map1) 
+	{
 		
-		Map1[0]= s1;
-		Map1[1]= s2;
-		Map1[2]= s3;
-		Map1[3]= s4;
-		Map1[4]= s5;
-		Map1[5]= s6;
-		Map1[6]= s7;
-		Map1[7]= s8;
-		Map1[8]= s9;
-		Map1[9]= s10;
-		Map1[10]= s11;
-		Map1[11]= s12;
+		Map1 = new Sala[20];
+	
 	}
 	public CargaMapa() 
 	{
@@ -56,7 +33,7 @@ public class CargaMapa {
 	
 
 	//Creador de mapas no procedural
-	public static void llenar()
+	public void llenar()
 	{
 		CargaMapa b1 = new CargaMapa(new Sala[20]);
 		
