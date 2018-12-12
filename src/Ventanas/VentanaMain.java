@@ -113,8 +113,22 @@ public class VentanaMain extends JFrame{
 		this.setTitle("Inicio RogeLike Dungeons");
 		this.pack();
 		this.setVisible(true);
+	
+		botonJugar.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				VentanaComp v1 = new VentanaComp();
+				v1.setSize(1000, 600);
+				v1.setVisible(true);
+				v1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				v1.setTitle("RogeLike Dungeons");
+			}
+		}
+		);
 	}
 
+		
 public static void main(String[] args) {
 	
 	

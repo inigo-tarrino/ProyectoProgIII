@@ -39,7 +39,7 @@ public class Sala {
 	}
 	@Override
 	public String toString() {
-		return "Sala [nums=" + nums + ", tsala=" + tsala + ", descsala=" + descsala + "]";
+		return "Sala [Número=" + nums + ", Tipo=" + tsala + ", Descripción=" + descsala + "]";
 	}
 	
 }
