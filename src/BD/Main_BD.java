@@ -10,7 +10,7 @@ public class Main_BD {
 		Connection con =null;
 		try {
 			Class.forName("org.sqlite.JDBC");
-			con= DriverManager.getConnection("jdbc:sqlite:/Users/iraideegia/git/ProyectoProg.db");
+			con= DriverManager.getConnection("ProyectoProg.db");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
