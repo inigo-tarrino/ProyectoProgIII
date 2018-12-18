@@ -13,12 +13,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Clases.GenMapa;
+import Clases.Mapa;
 import Motor.NadaMethod;
 
 public class VentanaComp extends JFrame {
 
+	private Mapa m1;
+	
 	public VentanaComp() 
 	{
+		//Genera el mapa
+		m1 = GenMapa.inicializar(); 
 		//Metodo necesario
 		Container cp = this.getContentPane();
 		cp.setLayout(new BorderLayout());
@@ -90,7 +96,27 @@ public class VentanaComp extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				Clases.Sala salas = m1.getSalaactual();
+				salas.responde();
 				
+				switch(salas.getTsala()) 
+				{
+				case COMBATE:
+					System.out.println("Combate responde");
+				break;
+				
+				case TIENDA:
+					System.out.println("Tienda responde");
+				break;
+				
+				case NADA:
+					System.out.println("Nada responde");
+				break;
+				
+				case TESORO:
+					System.out.println("Tesoro Responde");
+				break;
+				}
 			}
 		}
 		);
@@ -98,7 +124,20 @@ public class VentanaComp extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				j2.setText("Combate");
+				if(!m1.fin())
+				{
+					boolean fin = m1.actulizar();
+					if(fin) 
+					{
+						System.out.println("Has salido del mapa");
+						//mostrar ventana fin de juego
+					}
+					else 
+					{
+						//Muestra la siguiente sala
+						//repintar sala
+					}
+				}
 			}
 		}
 		);

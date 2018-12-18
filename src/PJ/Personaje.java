@@ -1,12 +1,16 @@
 package PJ;
 
+import Objetos_e_Inventario.Objeto;
+
 public class Personaje {
 
-	public int monedero;
+	public static int monedero;
 	private int hp;
 	private int dmg;
 	private String nom;
-
+	private Objeto Inv;
+	
+	
 	public Personaje(int hp, int dmg, String nom,int monedero) {
 		super();
 		this.monedero = monedero;

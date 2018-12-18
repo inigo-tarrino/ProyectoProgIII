@@ -1,16 +1,16 @@
 package Clases;
 
-public class Sala {
+public abstract class Sala {
 
 	public int nums; //numero de sala
 	public Salas tsala; //tipo de sala
 	public String descsala;//Descripcion de la sala
 	
 	public Sala(int nums, Clases.Salas tsala, String descsala) {
-		//super();
-		nums = nums;
-		tsala = tsala;
-		descsala = descsala;
+		super();
+		this.nums = nums;
+		this.tsala = tsala;
+		this.descsala = descsala;
 	}
 	public Sala() {
 		nums = 0;
@@ -37,6 +37,8 @@ public class Sala {
 	public void setDescsala(String descsala) {
 		this.descsala = descsala;
 	}
+	
+	public abstract void responde();
 	@Override
 	public String toString() {
 		return "Sala [Número=" + nums + ", Tipo=" + tsala + ", Descripción=" + descsala + "]";
