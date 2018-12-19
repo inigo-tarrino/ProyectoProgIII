@@ -9,8 +9,10 @@ import java.awt.event.*;
 
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import Clases.GenMapa;
@@ -35,7 +37,7 @@ public class VentanaComp extends JFrame {
 		main.setLayout(new GridLayout(1, 4)); //Divide el panel main en 1 columna y 4 filas
 	
 		JPanel juego= new JPanel();
-		juego.setBackground(Color.BLACK);
+//		juego.setBackground(Color.BLACK);
 		
 		JPanel menu= new JPanel();
 		menu.setLayout(new GridLayout(4, 1));
@@ -54,7 +56,7 @@ public class VentanaComp extends JFrame {
 		
 		//Labels = Textos
 		
-		JLabel j2 = new JLabel("Windowrino");
+		JLabel j2 = new JLabel("Info de la sala");
 		barra.add(j2, BorderLayout.CENTER);
 		
 		//Botones 
@@ -83,7 +85,7 @@ public class VentanaComp extends JFrame {
 		cp.add(main);
 		
 		//Action Listener
-		//Pruebas con hilos
+		
 		Prueba.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -102,19 +104,31 @@ public class VentanaComp extends JFrame {
 				switch(salas.getTsala()) 
 				{
 				case COMBATE:
+					j2.setText("Sala de Combate");
+					juego.setBackground(Color.CYAN);
 					System.out.println("Combate responde");
+					
 				break;
 				
 				case TIENDA:
+					j2.setText("Tienda");
+					juego.setBackground(Color.WHITE);
 					System.out.println("Tienda responde");
+					
 				break;
 				
 				case NADA:
+					j2.setText("Sala vacía");
+					juego.setBackground(Color.BLACK);
 					System.out.println("Nada responde");
+					
 				break;
 				
 				case TESORO:
+					j2.setText("Sala de Tesoro");
+					juego.setBackground(Color.GREEN);
 					System.out.println("Tesoro Responde");
+					
 				break;
 				}
 			}
@@ -129,8 +143,12 @@ public class VentanaComp extends JFrame {
 					boolean fin = m1.actulizar();
 					if(fin) 
 					{
+						j2.setText("Game Over");
+						juego.setBackground(Color.BLUE);
 						System.out.println("Has salido del mapa");
+						JOptionPane.showMessageDialog(rootPane, "OH vaya... parece que te has pasado el primer mapa", "Final", 0);
 						//mostrar ventana fin de juego
+						
 					}
 					else 
 					{
