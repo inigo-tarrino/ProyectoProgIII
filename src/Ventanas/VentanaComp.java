@@ -22,6 +22,7 @@ import Motor.NadaMethod;
 public class VentanaComp extends JFrame {
 
 	private Mapa m1;
+	private int sp = 1;
 	
 	public VentanaComp() 
 	{
@@ -104,28 +105,28 @@ public class VentanaComp extends JFrame {
 				switch(salas.getTsala()) 
 				{
 				case COMBATE:
-					j2.setText("Sala de Combate");
+					j2.setText("Sala de Combate  Sala: "+sp);
 					juego.setBackground(Color.CYAN);
 					System.out.println("Combate responde");
 					
 				break;
 				
 				case TIENDA:
-					j2.setText("Tienda");
+					j2.setText("Tienda  Sala: "+sp);
 					juego.setBackground(Color.WHITE);
 					System.out.println("Tienda responde");
 					
 				break;
 				
 				case NADA:
-					j2.setText("Sala vacía");
+					j2.setText("Sala vacía  Sala: "+sp);
 					juego.setBackground(Color.BLACK);
 					System.out.println("Nada responde");
 					
 				break;
 				
 				case TESORO:
-					j2.setText("Sala de Tesoro");
+					j2.setText("Sala de Tesoro  Sala: "+sp);
 					juego.setBackground(Color.GREEN);
 					System.out.println("Tesoro Responde");
 					
@@ -138,8 +139,10 @@ public class VentanaComp extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+
 				if(!m1.fin())
 				{
+					sp++;
 					boolean fin = m1.actulizar();
 					if(fin) 
 					{
