@@ -48,8 +48,6 @@ public class VInventario extends JFrame {
 	num.setLayout(new GridLayout(4, 1));
 	JButton b1 = new JButton("POCIMAS");
 	JButton b2 = new JButton("ARMAS");
-	JButton b3 = new JButton("???");
-	JButton b4 = new JButton("???");
 	b1.addActionListener(new ActionListener() {
 		
 		@Override
@@ -68,8 +66,6 @@ public class VInventario extends JFrame {
 	});
 	num.add(b1);
 	num.add(b2);
-	num.add(b3);
-	num.add(b4);
 	
 	JPanel descnum= new JPanel();
 	ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
