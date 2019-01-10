@@ -9,6 +9,10 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,6 +26,9 @@ import javax.swing.border.EmptyBorder;
 
 
 public class VentanaMain extends JFrame{
+	
+	//Definimos el log
+	static PrintStream log;
 	private JButton botonJugar;
 	private JButton botoncomoJugar;
 	private JButton botoncreditosJuego;
@@ -126,14 +133,39 @@ public class VentanaMain extends JFrame{
 			}
 		}
 		);
+		
+		//Habria que añadirlo al main para que nos salte por consola cuando
+		//Hemos cerrado la app.
+		this.addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosed(WindowEvent e) {
+				// TODO Auto-generated method stub
+				log.println("Programa cerrado."+ new Date());
+				log.close();
+			}
+
+		});
 	}
 
 		
 public static void main(String[] args) {
+
+	//Generamos el log
+	
+	try {
+		log = new PrintStream(new FileOutputStream("Juego.log", true));
+	} catch (FileNotFoundException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
+	log.println("Inicio de la app " + (new Date()));
 	
 	
 	EventQueue.invokeLater(new Runnable() {
 
+		
+		
 		@Override
 		public void run() {
 			try {
