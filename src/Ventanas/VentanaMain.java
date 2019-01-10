@@ -13,6 +13,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Date;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -28,7 +32,7 @@ import javax.swing.border.EmptyBorder;
 public class VentanaMain extends JFrame{
 	
 	//Definimos el log
-	static PrintStream log;
+	static Logger log;
 	private JButton botonJugar;
 	private JButton botoncomoJugar;
 	private JButton botoncreditosJuego;
@@ -136,16 +140,18 @@ public class VentanaMain extends JFrame{
 		
 		//Habria que añadirlo al main para que nos salte por consola cuando
 		//Hemos cerrado la app.
+	
 		this.addWindowListener(new WindowAdapter() {
 
 			@Override
 			public void windowClosed(WindowEvent e) {
 				// TODO Auto-generated method stub
-				log.println("Programa cerrado."+ new Date());
-				log.close();
+				log.log(Level.INFO, "Programa cerrado."+ new Date());
+				//log.close();
 			}
 
 		});
+		
 	}
 
 		
@@ -154,12 +160,20 @@ public static void main(String[] args) {
 	//Generamos el log
 	
 	try {
-		log = new PrintStream(new FileOutputStream("Juego.log", true));
-	} catch (FileNotFoundException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
+		log = Logger.getLogger("Juego-LoggerdeLvl");
+		Handler h = new FileHandler("Juego.xml");
+		//Lo genera en xml para dar mas informacion
+		log.addHandler(h);
+		log.setLevel(Level.FINEST);
+		h.setLevel(Level.FINEST); //El log registrara todos los niveles
+		//de prioridad para descativarlo hay que cambiar el level a OFF 
+		
+		
+		//Este es el que generó el Log en txt
+		//log = new PrintStream(new FileOutputStream("Juego.log", true));
+	} catch (Exception e1) {
 	}
-	log.println("Inicio de la app " + (new Date()));
+	log.log(Level.INFO, "Inicio de la app " + (new Date()));
 	
 	
 	EventQueue.invokeLater(new Runnable() {
