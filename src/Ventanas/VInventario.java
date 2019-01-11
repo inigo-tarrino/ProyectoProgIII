@@ -37,7 +37,7 @@ public class VInventario extends JFrame {
 	
 	
 	JPanel info = new JPanel();
-	JTextField prueb = new JTextField("Información sobre el personaje??");
+	JTextField prueb = new JTextField("Información sobre el personaje");
 	info.add(prueb);
 	
 	
@@ -47,25 +47,45 @@ public class VInventario extends JFrame {
 	JPanel num= new JPanel();
 	num.setLayout(new GridLayout(4, 1));
 	JButton b1 = new JButton("POCIMAS");
-	JButton b2 = new JButton("ARMAS");
+	JButton b2 = new JButton("ARMADURA");
+	JButton b3 = new JButton("VENDAS");
+	JButton b4 = new JButton("PAN");
 	b1.addActionListener(new ActionListener() {
-		
+
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 	});
 	b2.addActionListener(new ActionListener() {
-		
+
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-	
+
+		}
+	});
+	b3.addActionListener(new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+	});
+	b4.addActionListener(new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+
 		}
 	});
 	num.add(b1);
 	num.add(b2);
+	num.add(b3);
+	num.add(b4);
 	
 	JPanel descnum= new JPanel();
 	ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
