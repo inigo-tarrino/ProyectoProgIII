@@ -1,29 +1,48 @@
 package PJ;
 
-public class Enemigo {
+import Ventanas.Sprites;
+
+public class Enemigo extends Sprites{
 	
 	public int vida;
 	public int danyo;
 	public String name;
 	public int id;
 	public boolean activa;
+
 	
-	public Enemigo(int vida, int danyo, String name, int id, boolean activa) {
-		super();
+	public Enemigo(TEnemigos tipo) 
+	{
+		switch(tipo) 
+		{
+		case ESQUELETO:
+			asignar(10,10,"Esqueleto");
+			this.dir = "sprites\\Esqueleto.jpg";
+			break;
+		case CABALLERO_OSCURO:
+			asignar(20,20,"Caballero");
+			this.dir = "sprites\\Esqueleto.jpg";
+			break;
+		case GOBLIN:
+			asignar(15,5,"Goblin");
+			this.dir = "sprites\\Esqueleto.jpg";
+			break;
+		}
+		
+		
+		
+		
+	}
+	
+	private void asignar(int vida,int danyo,String name) 
+	{
 		this.vida = vida;
 		this.danyo = danyo;
-		this.name = name;
-		this.id = id;
-		this.activa = activa;
+		this.name  =name;
 	}
 	
 	public Enemigo() {
-		super();
-		this.vida = 0;
-		this.danyo = 0;
-		this.name = "Uno por defecto";
-		this.id = 0;
-		this.activa = false;
+		
 	}
 
 	public int getVida() {

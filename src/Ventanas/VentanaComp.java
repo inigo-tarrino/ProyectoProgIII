@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,7 +18,9 @@ import javax.swing.JPanel;
 
 import Clases.GenMapa;
 import Clases.Mapa;
+import Motor.CombateMethod;
 import Motor.NadaMethod;
+import PJ.Enemigo;
 
 public class VentanaComp extends JFrame {
 
@@ -105,12 +108,21 @@ public class VentanaComp extends JFrame {
 				switch(salas.getTsala()) 
 				{
 				case COMBATE:
+					CombateMethod c1 = new CombateMethod(sp, null, " ");
 					j2.setText("Sala de Combate  Sala: "+sp);
 					juego.setBackground(Color.CYAN);
+					int i =0;
 					//ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
 					//juego.setBackground(icon);
 					System.out.println("Combate responde");
+					ArrayList<Enemigo> enemigos =  c1.getEnemigos();
+					for(Enemigo enemigo : enemigos) 
+					{
 					
+						i ++;
+						juego.add(enemigo);
+					}
+					j2.setText("Sala de Combate  Sala: "+sp+"    "+i);
 				break;
 				
 				case TIENDA:

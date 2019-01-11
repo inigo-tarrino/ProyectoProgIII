@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import Clases.Sala;
 import PJ.Enemigo;
+import PJ.TEnemigos;
 
 //Metodo sala de combate
 public class CombateMethod extends Sala
@@ -16,6 +17,7 @@ public class CombateMethod extends Sala
 	public CombateMethod(int nums, Clases.Salas tsala, String descsala)
 	{
 		super(nums,tsala,descsala);
+		
 		genenemigos();
 		if(Math.random()< 0.5) 
 		{
@@ -34,6 +36,7 @@ public class CombateMethod extends Sala
 		if(atacausu) 
 		{
 			//mostrar keybindings
+			
 		}
 		else 
 		{
@@ -44,10 +47,26 @@ public class CombateMethod extends Sala
 			}
 		}
 		atacausu =!atacausu;
+		
+		
 	}
 	private void genenemigos() 
 	{
-	 enemigos = new ArrayList<>();
-	 enemigos.add(new Enemigo());
+		enemigos = new ArrayList<>();
+	     Enemigo e = new Enemigo(TEnemigos.ESQUELETO);
+	     double random = Math.random();
+	     int tiposEnemigo = TEnemigos.values().length;
+	     double inc = 1.0/tiposEnemigo;
+	     for(int i = 0; i < tiposEnemigo; i++) {
+	         if(random < (i+1)*inc) {
+	             e = new Enemigo(TEnemigos.values()[i]);
+	             break;
+	         }
+	     }
+	     enemigos.add(e);
+	}
+	public ArrayList<Enemigo> getEnemigos() 
+	{
+		return this.enemigos;
 	}
 }
