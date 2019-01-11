@@ -1,5 +1,7 @@
 package PJ;
 
+import javax.swing.ImageIcon;
+
 import Ventanas.Sprites;
 
 public class Enemigo extends Sprites{
@@ -17,18 +19,18 @@ public class Enemigo extends Sprites{
 		{
 		case ESQUELETO:
 			asignar(10,10,"Esqueleto");
-			this.dir = "sprites\\Esqueleto.jpg";
+			this.dir = "sprites\\Esqueleto.png";
 			break;
 		case CABALLERO_OSCURO:
 			asignar(20,20,"Caballero");
-			this.dir = "sprites\\Esqueleto.jpg";
+			this.dir = "sprites\\Esqueleto.png";
 			break;
 		case GOBLIN:
 			asignar(15,5,"Goblin");
-			this.dir = "sprites\\Esqueleto.jpg";
+			this.dir = "sprites\\Esqueleto.png";
 			break;
 		}
-		
+		this.setIcon(new ImageIcon(dir));
 		
 		
 		

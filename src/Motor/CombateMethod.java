@@ -53,17 +53,20 @@ public class CombateMethod extends Sala
 	private void genenemigos() 
 	{
 		enemigos = new ArrayList<>();
-	     Enemigo e = new Enemigo(TEnemigos.ESQUELETO);
-	     double random = Math.random();
-	     int tiposEnemigo = TEnemigos.values().length;
-	     double inc = 1.0/tiposEnemigo;
-	     for(int i = 0; i < tiposEnemigo; i++) {
-	         if(random < (i+1)*inc) {
-	             e = new Enemigo(TEnemigos.values()[i]);
-	             break;
-	         }
-	     }
-	     enemigos.add(e);
+        int numEnemigos = (int) (Math.random()*4)+1;
+        for(int j = 0; j < numEnemigos; j++) {
+            Enemigo e = new Enemigo(TEnemigos.ESQUELETO);
+            double random = Math.random();
+            int tiposEnemigo = TEnemigos.values().length;
+            double inc = 1.0/tiposEnemigo;
+            for(int i = 0; i < tiposEnemigo; i++) {
+                if(random < (i+1)*inc) {
+                    e = new Enemigo(TEnemigos.values()[i]);
+                    break;
+                }
+            }
+            enemigos.add(e);
+        }
 	}
 	public ArrayList<Enemigo> getEnemigos() 
 	{

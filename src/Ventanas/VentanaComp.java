@@ -4,10 +4,16 @@ package Ventanas;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.LayoutManager;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -26,9 +32,18 @@ public class VentanaComp extends JFrame {
 
 	private Mapa m1;
 	private int sp = 1;
+	private boolean combate = false;
+	private BufferedImage foncombate;
+	
 	
 	public VentanaComp() 
 	{
+		try {
+			foncombate = ImageIO.read(new File("sprites\\descarga.jpg"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		//Genera el mapa
 		m1 = GenMapa.inicializar(); 
 		//Metodo necesario
@@ -40,7 +55,17 @@ public class VentanaComp extends JFrame {
 		JPanel main = new JPanel();
 		main.setLayout(new GridLayout(1, 4)); //Divide el panel main en 1 columna y 4 filas
 	
-		JPanel juego= new JPanel();
+		JPanel juego= new JPanel() 
+		{
+			@Override
+			protected void paintComponent(Graphics g) {
+				if(combate) {
+				g.drawImage(foncombate, 0, 0,getWidth(),getHeight(), null);
+				}
+				}
+		};
+		
+		
 //		juego.setBackground(Color.BLACK);
 		
 		JPanel menu= new JPanel();
@@ -102,16 +127,20 @@ public class VentanaComp extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				
 				Clases.Sala salas = m1.getSalaactual();
 				salas.responde();
 				
 				switch(salas.getTsala()) 
 				{
 				case COMBATE:
+					if(combate) return;
+					combate = true;
 					CombateMethod c1 = new CombateMethod(sp, null, " ");
-					j2.setText("Sala de Combate  Sala: "+sp);
 					juego.setBackground(Color.CYAN);
 					int i =0;
+			
+					//juego.setLayout(GridLayout(2,2));
 					//ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
 					//juego.setBackground(icon);
 					System.out.println("Combate responde");
@@ -122,7 +151,8 @@ public class VentanaComp extends JFrame {
 						i ++;
 						juego.add(enemigo);
 					}
-					j2.setText("Sala de Combate  Sala: "+sp+"    "+i);
+					j2.setText("Sala de Combate  Sala: "+sp+"    "+i+" Enemigos se te aproximan");
+					
 				break;
 				
 				case TIENDA:
@@ -147,13 +177,21 @@ public class VentanaComp extends JFrame {
 				break;
 				}
 			}
+
+			private LayoutManager GridLayout(int i, int j) {
+				// TODO Auto-generated method stub
+				return null;
+			}
 		}
 		);
 		Seguir.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-
+				if(combate) {
+				combate = false;
+				}
+				juego.removeAll();
 				if(!m1.fin())
 				{
 					sp++;
@@ -188,6 +226,25 @@ public class VentanaComp extends JFrame {
 			}
 		}
 		);
+		this.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) 
+			{
+				if(combate) 
+				{
+					switch(e.getKeyCode()) 
+					{
+					case KeyEvent.VK_S:
+						System.out.println("Pulsada S");
+						break;
+					case KeyEvent.VK_M:
+						break;
+					case KeyEvent.VK_F:
+						break;
+					}
+				}
+			}
+		});
 	}
-
+	
 }
