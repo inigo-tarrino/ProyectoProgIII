@@ -7,7 +7,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.*;
 
-
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -107,6 +107,8 @@ public class VentanaComp extends JFrame {
 				case COMBATE:
 					j2.setText("Sala de Combate  Sala: "+sp);
 					juego.setBackground(Color.CYAN);
+					//ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
+					//juego.setBackground(icon);
 					System.out.println("Combate responde");
 					
 				break;

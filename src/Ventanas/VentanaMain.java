@@ -28,6 +28,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
+import DB.Bestiario;
+
 
 public class VentanaMain extends JFrame{
 	
@@ -52,17 +54,25 @@ public class VentanaMain extends JFrame{
 				
 			JPanel panelboton1= new JPanel(new GridBagLayout());//Pnael que contiene los botones
 			panelboton1.setBackground(new Color(0, 0, 0, 55));
+			
+			JPanel panelpref= new JPanel(new GridBagLayout());//Panel que contiene 2 los botones
+			panelpref.setBackground(new Color(0, 0, 0, 55));
+			//Toquitear para poner cordenadas en 0 0 panelpref.setBounds();
 	
-			panelboton1.setLayout(new GridLayout(3, 1)); //Divide el panel main en 1 columna y 3 filas
+			panelboton1.setLayout(new GridLayout(4, 1)); //Divide el panel main en 1 columna y 4 filas
 			
 		
 			JPanel panelboton2= new JPanel();//Panel padre
 			panelboton2.setBackground(new Color(0, 0, 0, 55));
 			JPanel panelboton3= new JPanel();
 			
+			JButton Pref = new JButton("Preferencias");
+			JButton Salir = new JButton("Salir");
+			
 			JButton botonJugar = new JButton("Jugar");
 			botonJugar.setFont(new Font("ComicSans", Font.PLAIN, 30));
-			JButton botoncomoJugar = new JButton("ï¿½Cï¿½mo jugar?");
+			JButton botoncomoJugar = new JButton("¿Como jugar?");
+			JButton botonBestiario = new JButton("Bestiario");
 			//Button crÃ©ditos del Juego
 			JButton botoncreditosJuego = new JButton("Crï¿½ditos");
 			botoncreditosJuego.addActionListener(new ActionListener() {
@@ -85,12 +95,18 @@ public class VentanaMain extends JFrame{
 			botoncomoJugar.setBackground(Color.white);
 			
 			panelboton1.add(botonJugar);
+			panelboton1.add(botonBestiario);
 			panelboton1.add(botoncomoJugar);
 			panelboton1.add(botoncreditosJuego);
+			
+			panelpref.add(Pref);
+			panelpref.add(Salir);
+			
 			//panelboton2.add(botoncomoJugar);
 			//panelboton3.add(botoncreditosJuego);
 			panelboton2.add(panelboton1, BorderLayout.SOUTH);
 			cp.add(panelboton2, BorderLayout.SOUTH);
+			cp.add(panelpref,BorderLayout.NORTH);
 			//cp.add(panelboton2);
 			//cp.add(panelboton3);
 			
@@ -141,6 +157,18 @@ public class VentanaMain extends JFrame{
 		//Habria que añadirlo al main para que nos salte por consola cuando
 		//Hemos cerrado la app.
 	
+		botonBestiario.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				Bestiario b1 = new Bestiario();
+				b1.setSize(1500, 400);
+				b1.setVisible(true);
+				b1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				b1.setTitle("Info Bestias");
+			}
+		}
+		);
 		this.addWindowListener(new WindowAdapter() {
 
 			@Override
