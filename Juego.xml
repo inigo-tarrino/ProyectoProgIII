@@ -2,13 +2,14 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2019-01-11T20:34:13</date>
-  <millis>1547235253502</millis>
+  <date>2019-01-17T15:38:41</date>
+  <millis>1547735921421</millis>
   <sequence>0</sequence>
   <logger>Juego-LoggerdeLvl</logger>
   <level>INFO</level>
   <class>Ventanas.VentanaMain</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Inicio de la app Fri Jan 11 20:34:13 CET 2019</message>
+  <message>Inicio de la app Thu Jan 17 15:38:41 CET 2019</message>
 </record>
+</log>

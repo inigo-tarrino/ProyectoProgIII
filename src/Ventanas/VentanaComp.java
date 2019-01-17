@@ -33,17 +33,44 @@ public class VentanaComp extends JFrame {
 	private Mapa m1;
 	private int sp = 1;
 	private boolean combate = false;
+	private boolean nada = false;
+	private boolean tesoro = false;
+	private boolean tienda = false;
 	private BufferedImage foncombate;
+	private BufferedImage fontienda;
+	private BufferedImage fonnada;
+	private BufferedImage fontesoro;
 	
 	
 	public VentanaComp() 
 	{
 		try {
-			foncombate = ImageIO.read(new File("sprites\\descarga.jpg"));
+			foncombate = ImageIO.read(new File("sprites\\combate.jpg"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
+		try {
+			fonnada = ImageIO.read(new File("sprites\\nada1.jpg"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			fontienda = ImageIO.read(new File("sprites\\descarga.jpg"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			fontesoro = ImageIO.read(new File("sprites\\tesoro1.jpg"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		//Genera el mapa
 		m1 = GenMapa.inicializar(); 
 		//Metodo necesario
@@ -62,6 +89,19 @@ public class VentanaComp extends JFrame {
 				if(combate) {
 				g.drawImage(foncombate, 0, 0,getWidth(),getHeight(), null);
 				}
+				if(nada) 
+				{
+				g.drawImage(fonnada, 0, 0, getWidth(), getHeight(), null);
+				}
+				if(tienda)
+				{
+				g.drawImage(fontienda, 0, 0, getWidth(), getHeight(), null);	
+				}
+				if(tesoro)
+				{
+				g.drawImage(fontesoro, 0, 0, getWidth(), getHeight(), null);	
+				}
+			
 				}
 		};
 		
@@ -139,7 +179,6 @@ public class VentanaComp extends JFrame {
 					CombateMethod c1 = new CombateMethod(sp, null, " ");
 					juego.setBackground(Color.CYAN);
 					int i =0;
-			
 					//juego.setLayout(GridLayout(2,2));
 					//ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
 					//juego.setBackground(icon);
@@ -156,6 +195,8 @@ public class VentanaComp extends JFrame {
 				break;
 				
 				case TIENDA:
+					if(tienda) return;
+					tienda = true;
 					j2.setText("Tienda  Sala: "+sp);
 					juego.setBackground(Color.WHITE);
 					System.out.println("Tienda responde");
@@ -163,6 +204,8 @@ public class VentanaComp extends JFrame {
 				break;
 				
 				case NADA:
+					if(nada) return;
+					nada = true;
 					j2.setText("Sala vacía  Sala: "+sp);
 					juego.setBackground(Color.BLACK);
 					System.out.println("Nada responde");
@@ -170,6 +213,8 @@ public class VentanaComp extends JFrame {
 				break;
 				
 				case TESORO:
+					if(tesoro) return;
+					tesoro = true;
 					j2.setText("Sala de Tesoro  Sala: "+sp);
 					juego.setBackground(Color.GREEN);
 					System.out.println("Tesoro Responde");
@@ -191,6 +236,15 @@ public class VentanaComp extends JFrame {
 				if(combate) {
 				combate = false;
 				}
+				if(nada) {
+					nada = false;
+					}
+				if(tesoro) {
+					tesoro = false;
+					}
+				if(tienda) {
+					tienda = false;
+					}
 				juego.removeAll();
 				if(!m1.fin())
 				{
