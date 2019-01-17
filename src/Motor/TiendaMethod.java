@@ -14,11 +14,11 @@ public class TiendaMethod extends Sala {
 	}
 	public static void genobj() 
 	{
-		int i= (int) ((Math.random()+1)*10);
+		//int i= (int) ((Math.random()+1)*10);
 
-		Objeto [] InventarioT = new Objeto[i];
+		//Objeto [] InventarioT = new Objeto[i];
 		ArrayList<Objeto> Inv = new ArrayList<Objeto>();
-		for (int j = 0; j < InventarioT.length; j++) 
+		for (int j = 0; j < 10; j++) 
 		{
 			Objeto ob;
 			double rand = Math.random();
