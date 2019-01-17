@@ -35,5 +35,5 @@ public class Tienda {
 	public void setMapa(ArrayList<Objeto> mapa) {
 		this.mapa = mapa;
 	}
-	
+	 
 }
