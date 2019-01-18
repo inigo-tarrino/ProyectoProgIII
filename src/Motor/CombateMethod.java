@@ -44,13 +44,20 @@ public class CombateMethod extends Sala
 			atacaenemigo++;
 			if(atacaenemigo>= enemigos.size() ) 
 			{
+				 
 				atacaenemigo =0;
+				
 			}
 		}
 		atacausu =!atacausu;
 		
 		
 	}
+	public void combateene() 
+	{
+		
+	}
+	
 	private void genenemigos() 
 	{
 		enemigos = new ArrayList<>();

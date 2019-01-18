@@ -4,6 +4,7 @@ package Ventanas;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
@@ -84,7 +85,7 @@ public class VentanaComp extends JFrame {
 		JPanel main = new JPanel();
 		main.setLayout(new GridLayout(1, 4)); //Divide el panel main en 1 columna y 4 filas
 	
-		JPanel juego= new JPanel() 
+		JPanel juego= new JPanel()
 		{
 			@Override
 			protected void paintComponent(Graphics g) {
@@ -106,19 +107,27 @@ public class VentanaComp extends JFrame {
 			
 				}
 		};
-		
+	//	juego.setLayout(new GridLayout(5, 1));//Arreglar los sprites o dejarlo asi
 		
 //		juego.setBackground(Color.BLACK);
+		
+		JPanel menuc= new JPanel();
 		
 		JPanel menu= new JPanel();
 		menu.setLayout(new GridLayout(4, 1));
 		menu.setBackground(Color.WHITE);
+		
+		menu.add(menuc, BorderLayout.SOUTH);
 		
 		JPanel barra = new JPanel();
 		barra.setBackground(Color.YELLOW);
 		
 		main.add(menu);
 		main.add(juego);
+		
+		JPanel ataques = new JPanel();
+		ataques.setBackground(Color.BLUE);
+		ataques.setLayout(new GridLayout(3, 1));
 		
 		
 		
@@ -131,12 +140,19 @@ public class VentanaComp extends JFrame {
 		barra.add(j2, BorderLayout.CENTER);
 		
 		//Botones 
+		
 		JButton Prueba= new JButton("Haz click");
 		JButton Stats= new JButton("Stats");
 		JButton Interactuar = new JButton("Interactuar");
 		JButton Seguir = new JButton("Seguir ->");
-		JButton Volver = new JButton("<- Volver");
+		//JButton Volver = new JButton("<- Volver");
 		JButton Inventario = new JButton("Inventario");
+		
+		JButton S= new JButton("Ataque Suave");
+		JButton M= new JButton("Ataque Medio");
+		JButton F = new JButton("Ataque Fuerte");
+	//	M.setSize(20, 20);
+	//	F.setSize(20, 20);
 		
 		Stats.setBackground(Color.WHITE);
 		Interactuar.setBackground(Color.WHITE);
@@ -147,8 +163,13 @@ public class VentanaComp extends JFrame {
 		menu.add(Stats);
 		menu.add(Interactuar);
 		menu.add(Seguir);
-		menu.add(Volver);
+		//menu.add(Volver);
 		menu.add(Prueba);
+		
+		ataques.add(S);
+		ataques.add(M);
+		ataques.add(F);
+		
 		
 		menu.add(Inventario);
 		
@@ -180,6 +201,7 @@ public class VentanaComp extends JFrame {
 					combate = true;
 					CombateMethod c1 = new CombateMethod(sp, null, " ");
 					juego.setBackground(Color.CYAN);
+					menuc.add(ataques);
 					int i =0;
 					//juego.setLayout(GridLayout(2,2));
 					//ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
@@ -193,15 +215,15 @@ public class VentanaComp extends JFrame {
 						juego.add(enemigo);
 					}
 					j2.setText("Sala de Combate  Sala: "+sp+"    "+i+" Enemigos se te aproximan");
-					
 				break;
 				
 				case TIENDA:
 					if(tienda) return;
 					tienda = true;
+					menuc.remove(ataques);
 					TiendaMethod c2 = new TiendaMethod(sp, null, " ");
 					j2.setText("Tienda  Sala: "+sp);
-				//	juego.setBackground(Color.WHITE);
+					juego.setBackground(Color.WHITE);
 					System.out.println("Tienda responde");
 					ArrayList<Objeto> Invent =  c2.getObjetos();
 					System.out.println(Invent);
@@ -211,8 +233,9 @@ public class VentanaComp extends JFrame {
 				case NADA:
 					if(nada) return;
 					nada = true;
+					menuc.remove(ataques);
 					j2.setText("Sala vacía  Sala: "+sp);
-				//	juego.setBackground(Color.BLACK);
+					juego.setBackground(Color.BLACK);
 					System.out.println("Nada responde");
 					
 				break;
@@ -220,6 +243,7 @@ public class VentanaComp extends JFrame {
 				case TESORO:
 					if(tesoro) return;
 					tesoro = true;
+					menuc.remove(ataques);
 					j2.setText("Sala de Tesoro  Sala: "+sp);
 					juego.setBackground(Color.GREEN);
 					System.out.println("Tesoro Responde");
@@ -262,6 +286,7 @@ public class VentanaComp extends JFrame {
 						System.out.println("Has salido del mapa");
 						JOptionPane.showMessageDialog(rootPane, "OH vaya... parece que te has pasado el primer mapa", "Final", 0);
 						//mostrar ventana fin de juego
+						
 						
 					}
 					else 

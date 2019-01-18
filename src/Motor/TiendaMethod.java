@@ -59,7 +59,7 @@ public class TiendaMethod extends Sala {
 	@Override
 	public void responde() {
 
-		System.out.println("Bienvenido a mi tienda visitante esto es lo que vendo: ");
+		System.out.println("Bienvenido a mi tienda visitante esto es lo que vendo: "+Inv);
 
 	}
 	/*
