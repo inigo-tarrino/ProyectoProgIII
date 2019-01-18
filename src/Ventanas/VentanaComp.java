@@ -26,6 +26,8 @@ import Clases.GenMapa;
 import Clases.Mapa;
 import Motor.CombateMethod;
 import Motor.NadaMethod;
+import Motor.TiendaMethod;
+import Objetos_e_Inventario.Objeto;
 import PJ.Enemigo;
 
 public class VentanaComp extends JFrame {
@@ -197,9 +199,12 @@ public class VentanaComp extends JFrame {
 				case TIENDA:
 					if(tienda) return;
 					tienda = true;
+					TiendaMethod c2 = new TiendaMethod(sp, null, " ");
 					j2.setText("Tienda  Sala: "+sp);
-					juego.setBackground(Color.WHITE);
+				//	juego.setBackground(Color.WHITE);
 					System.out.println("Tienda responde");
+					ArrayList<Objeto> Invent =  c2.getObjetos();
+					System.out.println(Invent);
 					
 				break;
 				
@@ -207,7 +212,7 @@ public class VentanaComp extends JFrame {
 					if(nada) return;
 					nada = true;
 					j2.setText("Sala vacía  Sala: "+sp);
-					juego.setBackground(Color.BLACK);
+				//	juego.setBackground(Color.BLACK);
 					System.out.println("Nada responde");
 					
 				break;
@@ -282,7 +287,7 @@ public class VentanaComp extends JFrame {
 		);
 		this.addKeyListener(new KeyAdapter() {
 			@Override
-			public void keyTyped(KeyEvent e) 
+			public void keyPressed(KeyEvent e) 
 			{
 				if(combate) 
 				{
@@ -290,6 +295,7 @@ public class VentanaComp extends JFrame {
 					{
 					case KeyEvent.VK_S:
 						System.out.println("Pulsada S");
+						System.out.println("Hola ahí");
 						break;
 					case KeyEvent.VK_M:
 						break;

@@ -35,6 +35,7 @@ public class CombateMethod extends Sala
 	{
 		if(atacausu) 
 		{
+			
 			//mostrar keybindings
 			
 		}

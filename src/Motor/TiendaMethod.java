@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import Clases.Sala;
 import Clases.Salas;
 import Objetos_e_Inventario.Objeto;
+import PJ.Enemigo;
 
 public class TiendaMethod extends Sala {
+	ArrayList<Objeto> Inv; 
 
 	public TiendaMethod(int nums, Clases.Salas tsala, String descsala)
 	{
 		super(nums,tsala,descsala);
 	}
-	public static void genobj() 
+	public static Tienda genobj() 
 	{
 		//int i= (int) ((Math.random()+1)*10);
 
@@ -23,31 +25,35 @@ public class TiendaMethod extends Sala {
 			Objeto ob;
 			double rand = Math.random();
 
-			if(rand< 0.25) 
+			if(rand< 0.2) 
 			{
-				ob= new Objeto();
+				ob= new Objeto(10, null);
 			}
-			else if(rand< 0.5)
+			else if (rand< 0.4) 
 			{
-				ob= new Objeto();
+				ob= new Objeto(8,null);
 			}
-			else if(rand<0.75) 
+			else if(rand< 0.6)
 			{
-				ob= new Objeto();
+				ob= new Objeto(5,null);
+			}
+			else if(rand<0.8) 
+			{
+				ob= new Objeto(20,null);
 			}
 			else 
 			{
-				ob= new Objeto();
+				ob= new Objeto(30,null);
 			}
 			Inv.add(ob);
-
+			
 		}
+		return new Tienda(1,Inv);
 
 	}
-	
-	public static void main(String[] args) 
+	public ArrayList<Objeto> getObjetos()
 	{
-		System.out.println("");
+		return this.Inv;
 	}
 
 	@Override
@@ -56,5 +62,11 @@ public class TiendaMethod extends Sala {
 		System.out.println("Bienvenido a mi tienda visitante esto es lo que vendo: ");
 
 	}
-
+	/*
+	public static void main(String[] args) 
+	{
+		Tienda t1 = genobj();
+		System.out.println(t1);
+	}
+	*/
 }

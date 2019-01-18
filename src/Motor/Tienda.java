@@ -35,5 +35,10 @@ public class Tienda {
 	public void setMapa(ArrayList<Objeto> mapa) {
 		this.mapa = mapa;
 	}
+
+	@Override
+	public String toString() {
+		return "Tienda [Stock=" + Stock + ", mapa=" + mapa + "]";
+	}
 	 
 }
