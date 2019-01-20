@@ -54,8 +54,6 @@ public class VInventario extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-
 		}
 	});
 	b2.addActionListener(new ActionListener() {

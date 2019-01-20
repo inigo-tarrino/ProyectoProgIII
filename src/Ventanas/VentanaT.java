@@ -39,10 +39,10 @@ public class VentanaT extends JFrame {
 		JLabel j5 = new JLabel("Info de la sala");
 		bar.add(j5, BorderLayout.CENTER);
 		*/
-		JButton a= new JButton("Vendas  Precio: 10");
-		JButton s= new JButton("Pan     Precio: 7");
-		JButton d= new JButton("Pocima  Precio: 20");
-		JButton f= new JButton("Placa   Precio: 30");
+		JButton a= new JButton("Vendas     Precio: 10");
+		JButton s= new JButton("Pan        Precio: 7");
+		JButton d= new JButton("Pocima     Precio: 20");
+		JButton f= new JButton("Armadura   Precio: 30");
 		
 		main.add(a);
 		main.add(s);
