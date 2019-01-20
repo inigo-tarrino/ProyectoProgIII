@@ -251,11 +251,19 @@ public class VentanaComp extends JFrame {
 					tienda = true;
 					menuc.remove(ataques);
 					TiendaMethod c2 = new TiendaMethod(sp, null, " ");
+					VentanaT v1 = new VentanaT();
+					v1.setSize(1000, 600);
+					v1.setVisible(true);
+					v1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+					v1.setTitle("Tienda");
 					j2.setText("Tienda  Sala: "+sp);
+					System.out.println(VentanaT.vcount);
 					juego.setBackground(Color.WHITE);
 					System.out.println("Tienda responde");
-					ArrayList<Objeto> Invent =  c2.getObjetos();
-					System.out.println(Invent);
+					System.out.println();
+					System.out.println("Obejtos de cada: Pocimas : "+VentanaT.potcount+" , Vendas : "+VentanaT.vcount+" , Pan: "+VentanaT.pacount+" , Armadura: "+VentanaT.pcount);
+				//	ArrayList<Objeto> Invent =  c2.getObjetos();
+				//	System.out.println(Invent);
 					
 				break;
 				
@@ -266,6 +274,7 @@ public class VentanaComp extends JFrame {
 					j2.setText("Sala vac�a  Sala: "+sp);
 					juego.setBackground(Color.BLACK);
 					System.out.println("Nada responde");
+					System.out.println("Obejtos de cada: Pocimas : "+VentanaT.potcount+" , Vendas : "+VentanaT.vcount+" , Pan: "+VentanaT.pacount+" , Armadura: "+VentanaT.pcount);
 					
 				break;
 				
@@ -276,7 +285,7 @@ public class VentanaComp extends JFrame {
 					j2.setText("Sala de Tesoro  Sala: "+sp);
 					juego.setBackground(Color.GREEN);
 					System.out.println("Tesoro Responde");
-					
+					System.out.println("Obejtos de cada: Pocimas : "+VentanaT.potcount+" , Vendas : "+VentanaT.vcount+" , Pan: "+VentanaT.pacount+" , Armadura: "+VentanaT.pcount);
 				break;
 				}
 			}
@@ -378,14 +387,70 @@ public class VentanaComp extends JFrame {
 		M.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				if(atacausua && combate) {
+					if(enemigos == null) System.err.println("Error: enemigos es null"); 
+					if(enemigos.isEmpty()) 
+					{
+						combate= false;
+						return;
+					}
+					enemigos.get(0).vida -= (int) (Personaje.dmg*1);
+					if(enemigos.get(0).vida <= 0) {
+						enemigos.remove(0);
+					}
+					if(enemigos.isEmpty()) 
+					{
+						Personaje.monedero += 15; 
+						System.out.println("Has ganado");
+						return;
+					}
+					atacausua = false;
+					combaterino.responde();
+					if(Personaje.hp <=0) 
+					{
+						System.out.println("Has perdido");
+						combate= false;
+						return;
+					}
+					atacausua= true;
+					
+				} 
+				vida.setText(Personaje.hp+"");	
 			}
 		});
 		
 		F.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				if(atacausua && combate) {
+					if(enemigos == null) System.err.println("Error: enemigos es null"); 
+					if(enemigos.isEmpty()) 
+					{
+						combate= false;
+						return;
+					}
+					enemigos.get(0).vida -= (int) (Personaje.dmg*1.2);
+					if(enemigos.get(0).vida <= 0) {
+						enemigos.remove(0);
+					}
+					if(enemigos.isEmpty()) 
+					{
+						Personaje.monedero += 15; 
+						System.out.println("Has ganado");
+						return;
+					}
+					atacausua = false;
+					combaterino.responde();
+					if(Personaje.hp <=0) 
+					{
+						System.out.println("Has perdido");
+						combate= false;
+						return;
+					}
+					atacausua= true;
+					
+				} 
+				vida.setText(Personaje.hp+"");
 			}
 		});
 		/*

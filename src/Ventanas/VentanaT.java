@@ -62,6 +62,7 @@ public class VentanaT extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				if(Personaje.monedero >= 30)
 				vcount++;
 			}
 		}
@@ -80,6 +81,7 @@ public class VentanaT extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				if(Personaje.monedero >= 40)
 				potcount++;
 			}
 		}
@@ -88,6 +90,7 @@ public class VentanaT extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				if(Personaje.monedero >= 30)
 				pcount++;
 			}
 		}
@@ -100,8 +103,8 @@ public class VentanaT extends JFrame {
 		VentanaT v1 = new VentanaT();
 		v1.setSize(1000, 600);
 		v1.setVisible(true);
-		v1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		v1.setTitle("Inventario");
+		v1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		v1.setTitle("Tienda");
 		
 	}
 

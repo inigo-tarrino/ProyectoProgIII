@@ -56,9 +56,9 @@ public class VInventario extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if(VentanaT.vcount > 0) 
+			if(VentanaT.potcount > 0) 
 			{
-				Personaje.hp = Personaje.hp + 20;
+				Personaje.hp = Personaje.hp + 30;
 			}
 		}
 	});
@@ -66,7 +66,10 @@ public class VInventario extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			if(VentanaT.pcount > 0) 
+			{
+				Personaje.hp = Personaje.hp + 5;
+			}
 
 		}
 	});
@@ -74,7 +77,10 @@ public class VInventario extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			if(VentanaT.vcount > 0) 
+			{
+				Personaje.hp = Personaje.hp + 10;
+			}
 
 		}
 	});
@@ -82,8 +88,10 @@ public class VInventario extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-
+			if(VentanaT.pacount > 0) 
+			{
+				Personaje.hp = Personaje.hp + 7;
+			}
 		}
 	});
 	num.add(b1);
