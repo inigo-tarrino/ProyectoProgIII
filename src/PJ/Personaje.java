@@ -4,12 +4,18 @@ import Objetos_e_Inventario.Objeto;
 
 public class Personaje {
 
-	public static int monedero;
-	private int hp;
-	private int dmg;
+	public static int monedero =0;
+	public static int hp= 100;
+	public static int dmg= 10;
 	private String nom;
 	private Objeto Inv;
 	
+	public static void inicializar() 
+	{
+		monedero =0;
+		hp = 100;
+		dmg= 10;
+	}
 	
 	public Personaje(int hp, int dmg, String nom,int monedero) {
 		super();

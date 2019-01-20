@@ -30,6 +30,7 @@ import Motor.NadaMethod;
 import Motor.TiendaMethod;
 import Objetos_e_Inventario.Objeto;
 import PJ.Enemigo;
+import PJ.Personaje;
 
 public class VentanaComp extends JFrame {
 
@@ -44,13 +45,18 @@ public class VentanaComp extends JFrame {
 	private BufferedImage fonnada;
 	private BufferedImage fontesoro;
 	
+	private ArrayList<Enemigo> enemigos;
+	
+	private CombateMethod combaterino;
+	
+	private boolean atacausua;
+	private JLabel vida;
 	
 	public VentanaComp() 
 	{
 		try {
 			foncombate = ImageIO.read(new File("sprites\\combate.jpg"));
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -122,6 +128,16 @@ public class VentanaComp extends JFrame {
 		JPanel barra = new JPanel();
 		barra.setBackground(Color.YELLOW);
 		
+/*
+		JPanel panIzq = new JPanel(new BorderLayout());
+		cp.add(panIzq, BorderLayout.WEST);
+		
+		panIzq.add(menu, BorderLayout.CENTER);
+		
+		JPanel Info = new JPanel(new BorderLayout());
+		panIzq.add(Info,BorderLayout.SOUTH);
+		panIzq.setBackground(Color.BLUE);
+	*/	
 		main.add(menu);
 		main.add(juego);
 		
@@ -139,8 +155,9 @@ public class VentanaComp extends JFrame {
 		JLabel j2 = new JLabel("Info de la sala");
 		barra.add(j2, BorderLayout.CENTER);
 		
+		vida = new JLabel(Personaje.hp+"");
 		//Botones 
-		
+		menu.add(vida);
 		JButton Prueba= new JButton("Haz click");
 		JButton Stats= new JButton("Stats");
 		JButton Interactuar = new JButton("Interactuar");
@@ -159,7 +176,6 @@ public class VentanaComp extends JFrame {
 		Seguir.setBackground(Color.WHITE);
 		Inventario.setBackground(Color.WHITE);
 		
-		
 		menu.add(Stats);
 		menu.add(Interactuar);
 		menu.add(Seguir);
@@ -173,7 +189,7 @@ public class VentanaComp extends JFrame {
 		
 		menu.add(Inventario);
 		
-		//Es dios-método necesario
+		//Es dios-mï¿½todo necesario
 		cp.add(main);
 		
 		//Action Listener
@@ -200,6 +216,7 @@ public class VentanaComp extends JFrame {
 					if(combate) return;
 					combate = true;
 					CombateMethod c1 = new CombateMethod(sp, null, " ");
+					combaterino = c1 ;
 					juego.setBackground(Color.CYAN);
 					menuc.add(ataques);
 					int i =0;
@@ -207,14 +224,26 @@ public class VentanaComp extends JFrame {
 					//ImageIcon icon = new ImageIcon(getClass().getResource("Icono.png")); 
 					//juego.setBackground(icon);
 					System.out.println("Combate responde");
-					ArrayList<Enemigo> enemigos =  c1.getEnemigos();
+					enemigos =  c1.getEnemigos();
 					for(Enemigo enemigo : enemigos) 
 					{
-					
 						i ++;
 						juego.add(enemigo);
 					}
 					j2.setText("Sala de Combate  Sala: "+sp+"    "+i+" Enemigos se te aproximan");
+					
+					atacausua = c1.atacausu;
+					if(!atacausua) {
+						c1.responde();
+						if(Personaje.hp <=0) 
+						{
+							System.out.println("Hasperdido");
+							combate = false;
+							return;
+						}
+						atacausua = true;
+					} 
+					
 				break;
 				
 				case TIENDA:
@@ -234,7 +263,7 @@ public class VentanaComp extends JFrame {
 					if(nada) return;
 					nada = true;
 					menuc.remove(ataques);
-					j2.setText("Sala vacía  Sala: "+sp);
+					j2.setText("Sala vacï¿½a  Sala: "+sp);
 					juego.setBackground(Color.BLACK);
 					System.out.println("Nada responde");
 					
@@ -310,6 +339,55 @@ public class VentanaComp extends JFrame {
 			}
 		}
 		);
+		
+		S.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(atacausua && combate) {
+					if(enemigos == null) System.err.println("Error: enemigos es null"); 
+					if(enemigos.isEmpty()) 
+					{
+						combate= false;
+						return;
+					}
+					enemigos.get(0).vida -= (int) (Personaje.dmg*0.8);
+					if(enemigos.get(0).vida <= 0) {
+						enemigos.remove(0);
+					}
+					if(enemigos.isEmpty()) 
+					{
+						Personaje.monedero += 15; 
+						System.out.println("Has ganado");
+						return;
+					}
+					atacausua = false;
+					combaterino.responde();
+					if(Personaje.hp <=0) 
+					{
+						System.out.println("Has perdido");
+						combate= false;
+						return;
+					}
+					atacausua= true;
+					
+				} 
+				vida.setText(Personaje.hp+"");
+			}
+		});
+		
+		M.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		F.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		/*
 		this.addKeyListener(new KeyAdapter() {
 			@Override
@@ -321,7 +399,7 @@ public class VentanaComp extends JFrame {
 					{
 					case KeyEvent.VK_S:
 						System.out.println("Pulsada S");
-						System.out.println("Hola ahí");
+						System.out.println("Hola ahï¿½");
 						break;
 					case KeyEvent.VK_M:
 						break;

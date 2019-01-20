@@ -11,20 +11,26 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import PJ.Personaje;
+
 public class VentanaT extends JFrame {
 
-	public int vcount=0;
-	public int pcount=0;
-	public int pacount=0;
-	public int potcount=0;
+	public static int vcount=0;
+	public static int pcount=0;
+	public static int pacount=0;
+	public static int potcount=0;
 	
 	public VentanaT()
 	{
+
 		Container cp = this.getContentPane();
 		cp.setLayout(new BorderLayout());
 		
-		
-		
+		 vcount=0;
+		 pcount=0;
+		 pacount=0;
+		 potcount=0;
+		 
 		JPanel main = new JPanel();
 		main.setLayout(new GridLayout(5, 1));
 		
@@ -64,10 +70,12 @@ public class VentanaT extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				if(Personaje.monedero >= 20)
 				pacount++;
 			}
 		}
 		);
+		
 		d.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e) 

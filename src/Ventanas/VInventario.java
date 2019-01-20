@@ -17,6 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import PJ.Personaje;
+
 
 
 public class VInventario extends JFrame {
@@ -54,6 +56,10 @@ public class VInventario extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			if(VentanaT.vcount > 0) 
+			{
+				Personaje.hp = Personaje.hp + 20;
+			}
 		}
 	});
 	b2.addActionListener(new ActionListener() {

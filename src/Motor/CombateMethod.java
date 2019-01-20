@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 import Clases.Sala;
 import PJ.Enemigo;
+import PJ.Personaje;
 import PJ.TEnemigos;
+import Ventanas.VentanaComp;
 
 //Metodo sala de combate
 public class CombateMethod extends Sala
 {
 	ArrayList<Enemigo> enemigos; 
-	private boolean atacausu; //true atacaas tu, false atacan ellos
+	public boolean atacausu; //true atacaas tu, false atacan ellos
 	private int atacaenemigo;//Num de cual ataca
 	
 	
@@ -31,28 +33,25 @@ public class CombateMethod extends Sala
 	}
 	
 	@Override
-	public void responde() //Sistema de turnos implementado
+	public void responde() //Ataque del enemigo
 	{
-		if(atacausu) 
-		{
-			
-			//mostrar keybindings
-			
-		}
-		else 
-		{
+
 			atacaenemigo++;
 			if(atacaenemigo>= enemigos.size() ) 
 			{
-				 
+				int dmg= 0;
+				for(Enemigo e : enemigos) 
+				{
+					dmg += e.danyo;
+				}
 				atacaenemigo =0;
-				
+				Personaje.hp -= dmg;
 			}
 		}
-		atacausu =!atacausu;
 		
 		
-	}
+		
+	
 	public void combateene() 
 	{
 		

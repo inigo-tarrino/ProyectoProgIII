@@ -29,6 +29,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import DB.Bestiario;
+import PJ.Personaje;
 
 
 public class VentanaMain extends JFrame{
@@ -42,6 +43,7 @@ public class VentanaMain extends JFrame{
 	
 	public VentanaMain() {
 		
+		Personaje.inicializar();
 		ImagenInicio p = new ImagenInicio();
 		p.setBorder(new EmptyBorder(500, 500, 1000, 600));
 		//p.setLayout(new BorderLayout(0, 0));
@@ -71,7 +73,7 @@ public class VentanaMain extends JFrame{
 			
 			JButton botonJugar = new JButton("Jugar");
 			botonJugar.setFont(new Font("ComicSans", Font.PLAIN, 30));
-			JButton botoncomoJugar = new JButton("¿Como jugar?");
+			JButton botoncomoJugar = new JButton("ï¿½Como jugar?");
 			JButton botonBestiario = new JButton("Bestiario");
 			//Button crÃ©ditos del Juego
 			JButton botoncreditosJuego = new JButton("Crï¿½ditos");
@@ -154,7 +156,7 @@ public class VentanaMain extends JFrame{
 		}
 		);
 		
-		//Habria que añadirlo al main para que nos salte por consola cuando
+		//Habria que aï¿½adirlo al main para que nos salte por consola cuando
 		//Hemos cerrado la app.
 	
 		botonBestiario.addActionListener(new ActionListener()
@@ -197,7 +199,7 @@ public static void main(String[] args) {
 		//de prioridad para descativarlo hay que cambiar el level a OFF 
 		
 		
-		//Este es el que generó el Log en txt
+		//Este es el que generï¿½ el Log en txt
 		//log = new PrintStream(new FileOutputStream("Juego.log", true));
 	} catch (Exception e1) {
 	}
