@@ -3,6 +3,8 @@ package Ventanas;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +13,11 @@ import javax.swing.JPanel;
 
 public class VentanaT extends JFrame {
 
+	public int vcount=0;
+	public int pcount=0;
+	public int pacount=0;
+	public int potcount=0;
+	
 	public VentanaT()
 	{
 		Container cp = this.getContentPane();
@@ -44,6 +51,39 @@ public class VentanaT extends JFrame {
 
 		
 		cp.add(main);
+		
+		a.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				vcount++;
+			}
+		}
+		);
+		s.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				pacount++;
+			}
+		}
+		);
+		d.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				potcount++;
+			}
+		}
+		);
+		f.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				pcount++;
+			}
+		}
+		);
 		
 	}
 
