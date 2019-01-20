@@ -310,6 +310,7 @@ public class VentanaComp extends JFrame {
 			}
 		}
 		);
+		/*
 		this.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) 
@@ -329,7 +330,8 @@ public class VentanaComp extends JFrame {
 					}
 				}
 			}
-		});
+			 
+		});*/
 	}
 	
 }
