@@ -48,10 +48,10 @@ public class VInventario extends JFrame {
 	
 	JPanel num= new JPanel();
 	num.setLayout(new GridLayout(4, 1));
-	JButton b1 = new JButton("POCIMAS");
-	JButton b2 = new JButton("ARMADURA");
-	JButton b3 = new JButton("VENDAS");
-	JButton b4 = new JButton("PAN");
+	JButton b1 = new JButton("POCIMAS : "+VentanaT.potcount);
+	JButton b2 = new JButton("ARMADURA :"+VentanaT.pacount);
+	JButton b3 = new JButton("VENDAS :"+VentanaT.vcount);
+	JButton b4 = new JButton("PAN :"+VentanaT.pacount);
 	b1.addActionListener(new ActionListener() {
 
 		@Override
@@ -59,6 +59,7 @@ public class VInventario extends JFrame {
 			if(VentanaT.potcount > 0) 
 			{
 				Personaje.hp = Personaje.hp + 30;
+				VentanaT.potcount--;
 			}
 		}
 	});
@@ -69,6 +70,7 @@ public class VInventario extends JFrame {
 			if(VentanaT.pcount > 0) 
 			{
 				Personaje.hp = Personaje.hp + 5;
+				VentanaT.pcount--;
 			}
 
 		}
@@ -80,6 +82,7 @@ public class VInventario extends JFrame {
 			if(VentanaT.vcount > 0) 
 			{
 				Personaje.hp = Personaje.hp + 10;
+				VentanaT.vcount--;
 			}
 
 		}
@@ -91,6 +94,7 @@ public class VInventario extends JFrame {
 			if(VentanaT.pacount > 0) 
 			{
 				Personaje.hp = Personaje.hp + 7;
+				VentanaT.pacount--;
 			}
 		}
 	});
