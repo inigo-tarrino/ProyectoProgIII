@@ -3,12 +3,15 @@ package Ventanas;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.Permissions;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import PJ.Personaje;
@@ -20,6 +23,7 @@ public class VentanaT extends JFrame {
 	public static int pacount=0;
 	public static int potcount=0;
 	
+	
 	public VentanaT()
 	{
 
@@ -30,14 +34,14 @@ public class VentanaT extends JFrame {
 		 pcount=0;
 		 pacount=0;
 		 potcount=0;
-		 
+	
 		JPanel main = new JPanel();
 		main.setLayout(new GridLayout(5, 1));
 		
 		JPanel juego = new JPanel();
 		main.add(juego, BorderLayout.SOUTH);
-		JButton b1 = new JButton("Hola");//El que muestre el stock
-		juego.add(b1);
+		Label l1 = new Label("Tu dinero: "+Personaje.monedero);//El que muestre el stock
+		juego.add(l1);
 		/*
 		JLabel bar = new JLabel();
 		main.add(bar, BorderLayout.SOUTH);
@@ -45,9 +49,9 @@ public class VentanaT extends JFrame {
 		JLabel j5 = new JLabel("Info de la sala");
 		bar.add(j5, BorderLayout.CENTER);
 		*/
-		JButton a= new JButton("Vendas     Precio: 10");
-		JButton s= new JButton("Pan        Precio: 7");
-		JButton d= new JButton("Pocima     Precio: 20");
+		JButton a= new JButton("Vendas     Precio: 30");
+		JButton s= new JButton("Pan        Precio: 20");
+		JButton d= new JButton("Pocima     Precio: 40");
 		JButton f= new JButton("Armadura   Precio: 30");
 		
 		main.add(a);
@@ -63,7 +67,15 @@ public class VentanaT extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{
 				if(Personaje.monedero >= 30)
+				{
+				Personaje.monedero -=30;
 				vcount++;
+				System.out.println(Personaje.monedero);
+				}
+				else 
+				{
+					JOptionPane.showMessageDialog(rootPane, "No tienes dinero", "No hay dinero", 0);
+				}
 			}
 		}
 		);
@@ -71,8 +83,15 @@ public class VentanaT extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				if(Personaje.monedero >= 20)
+				if(Personaje.monedero >= 20) 
+				{
+				Personaje.monedero -=20;
 				pacount++;
+				}
+				else 
+				{
+					JOptionPane.showMessageDialog(rootPane, "No tienes dinero", "No hay Dinero", 0);
+				}
 			}
 		}
 		);
@@ -81,8 +100,15 @@ public class VentanaT extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				if(Personaje.monedero >= 40)
+				if(Personaje.monedero >= 40) 
+				{
+				Personaje.monedero -=40;
 				potcount++;
+				}
+				else 
+				{
+					JOptionPane.showMessageDialog(rootPane, "No tienes dinero", "No hay Dinero", 0);
+				}
 			}
 		}
 		);
@@ -91,7 +117,14 @@ public class VentanaT extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{
 				if(Personaje.monedero >= 30)
+				{	
+				Personaje.monedero -=30;	
 				pcount++;
+				}
+				else 
+				{
+					JOptionPane.showMessageDialog(rootPane, "No tienes dinero", "No hay dinero", 0);
+				}
 			}
 		}
 		);
