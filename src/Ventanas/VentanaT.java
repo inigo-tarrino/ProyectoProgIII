@@ -22,7 +22,7 @@ public class VentanaT extends JFrame {
 	public static int pcount=0;
 	public static int pacount=0;
 	public static int potcount=0;
-	
+	public JLabel l1;
 	
 	public VentanaT()
 	{
@@ -132,7 +132,7 @@ public class VentanaT extends JFrame {
 			}
 		}
 		);
-		Label l1 = new Label("Tu dinero: "+Personaje.monedero);//El que muestre el stock
+		//Label l1 = new Label("Tu dinero: "+Personaje.monedero);//El que muestre el stock
 		juego.add(l1);
 	}
 

@@ -48,7 +48,10 @@ public class VentComp extends JFrame{
 	
 	private boolean atacausua;
 	private JLabel vida;
-	
+
+	private int atacs =(int) (Math.random()*10)+1;
+	private int atacm =(int) (Math.random()*10)+1;
+	private int atacf =(int) (Math.random()*10)+1;
 	public VentComp() {
 		
 		try {
@@ -354,8 +357,15 @@ public class VentComp extends JFrame{
 						combate= false;
 						return;
 					}
+					if(atacs>1) {
 					enemigos.get(0).vida -= (int) (Personaje.dmg*0.8);
-					if(enemigos.get(0).vida <= 0) {
+					}
+					else 
+					{
+						j2.setText("Ataque fallido");
+					}
+					if(enemigos.get(0).vida <= 0)
+					{
 						enemigos.remove(0);
 					}
 					if(enemigos.isEmpty()) 
@@ -392,8 +402,16 @@ public class VentComp extends JFrame{
 						combate= false;
 						return;
 					}
+					if(atacm>2) 
+					{
 					enemigos.get(0).vida -= (int) (Personaje.dmg*1);
-					if(enemigos.get(0).vida <= 0) {
+					}
+					else 
+					{
+						j2.setText("Ataque fallido");
+					}
+					if(enemigos.get(0).vida <= 0) 
+					{
 						enemigos.remove(0);
 					}
 					if(enemigos.isEmpty()) 
@@ -430,7 +448,14 @@ public class VentComp extends JFrame{
 						combate= false;
 						return;
 					}
-					enemigos.get(0).vida -= (int) (Personaje.dmg*1.2);
+					if(atacf>5)
+					{
+					enemigos.get(0).vida -= (int) (Personaje.dmg*1.8);
+					}
+					else 
+					{
+						System.out.println("Ataque fallido");
+					}
 					if(enemigos.get(0).vida <= 0) {
 						enemigos.remove(0);
 					}
