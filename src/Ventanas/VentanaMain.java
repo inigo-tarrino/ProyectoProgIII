@@ -92,6 +92,20 @@ public class VentanaMain extends JFrame{
 			
 		    //Fin button créditos del Juego
 			
+			botoncomoJugar.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					JOptionPane.showMessageDialog(rootPane, "Como Jugar: \n"
+							+ "Nada mas inicializar el juego entraras en la primera sala \n"
+							+ "Usa el boton Interactuar para Interactuar con la sala,Seguir para pasar a la siguiente sala \n"
+							+ "Usa el boton Inventario para ver tus objetos\n"
+							+ "Finalmente en los combates, usa los 3 botones proporcionados para asestar golpes ");
+					
+				}});
+			
+			
+			
 			
 			botonJugar.setBackground(Color.WHITE);
 			botoncomoJugar.setBackground(Color.white);
