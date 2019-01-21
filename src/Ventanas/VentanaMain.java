@@ -69,7 +69,7 @@ public class VentanaMain extends JFrame{
 			JPanel panelboton3= new JPanel();
 			
 			JButton Pref = new JButton("Preferencias");
-			JButton Salir = new JButton("Salir");
+			//Button Salir = new JButton("Salir");
 			
 			JButton botonJugar = new JButton("Jugar");
 			botonJugar.setFont(new Font("ComicSans", Font.PLAIN, 30));
@@ -77,6 +77,14 @@ public class VentanaMain extends JFrame{
 			JButton botonBestiario = new JButton("Bestiario");
 			//Button créditos del Juego
 			JButton botoncreditosJuego = new JButton("Cr�ditos");
+			Pref.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) 
+				{
+					
+				}});
+			
 			botoncreditosJuego.addActionListener(new ActionListener() {
 
 				@Override
@@ -100,6 +108,7 @@ public class VentanaMain extends JFrame{
 							+ "Nada mas inicializar el juego entraras en la primera sala \n"
 							+ "Usa el boton Interactuar para Interactuar con la sala,Seguir para pasar a la siguiente sala \n"
 							+ "Usa el boton Inventario para ver tus objetos\n"
+							+ "La barra azul en la parte inferior izquierda es tu vida\n"
 							+ "Finalmente en los combates, usa los 3 botones proporcionados para asestar golpes ");
 					
 				}});
@@ -116,7 +125,7 @@ public class VentanaMain extends JFrame{
 			panelboton1.add(botoncreditosJuego);
 			
 			panelpref.add(Pref);
-			panelpref.add(Salir);
+			//panelpref.add(Salir);
 			
 			//panelboton2.add(botoncomoJugar);
 			//panelboton3.add(botoncreditosJuego);

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Label;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -186,7 +187,7 @@ public class VentComp extends JFrame{
 		pb = new JProgressBar(min, max);
 		pb.setValue(Personaje.hp);
 		info.add(pb);
-		
+ 
 		n3.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e) 
