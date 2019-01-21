@@ -39,13 +39,21 @@ public class VInventario extends JFrame {
 	
 	
 	JPanel info = new JPanel();
-	JTextField prueb = new JTextField("Información sobre el personaje");
-	info.add(prueb);
-	
-	
-	
-	
-	
+	String s = "<html>  <br>"
+			+ "<br>"
+			+ "<br>"
+			+ "Descripción del personaje: <br>"
+			+ " Eres un caballero que se adentra en una aventura <br>"
+			+ " que consiste en ir completando salas. <br> "
+			+ " A medida que avanzas en el juego, <br>"
+			+ " podras conseguir diferentes objetos como armas y armaduras. <br>"
+			+ " Además cuando te enfrentes con los enemigos, <br>"
+			+ " si eres herido podrás utilizar diferentes elementos <br>"
+			+ " para restaurar la salud de tu personaje. "
+			+ "</html>" ;
+	JLabel parte = new JLabel(s);
+	info.add(parte);
+				
 	JPanel num= new JPanel();
 	num.setLayout(new GridLayout(4, 1));
 	JButton b1 = new JButton("POCIMAS : "+VentanaT.potcount);
@@ -115,7 +123,7 @@ public class VInventario extends JFrame {
 	
 	
 	
-	info.setBackground(new Color(78, 87, 84));
+	info.setBackground(new Color(255, 255, 255));
 	descnum.setBackground(new Color(78, 87, 84));
 	otros.setBackground(new Color(78, 87, 84));
 	num.setBackground(new Color(78, 87, 84));
