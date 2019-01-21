@@ -38,6 +38,7 @@ public class TesoroMethod extends Sala {
 		Personaje.monedero += coin;
 		System.out.println(Personaje.monedero);
 	}
+
 /*
 	public static void main(String[] args) {
 		respondemi();

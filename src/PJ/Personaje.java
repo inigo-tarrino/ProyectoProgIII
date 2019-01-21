@@ -69,5 +69,8 @@ public class Personaje {
 	public String toString() {
 		return "Personaje [hp=" + hp + ", dmg=" + dmg + ", nom=" + nom + "]";
 	}
-
+	public static void actualizarm() 
+	{
+		Personaje.monedero = monedero;
+	}
 }

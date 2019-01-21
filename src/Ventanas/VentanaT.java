@@ -34,14 +34,14 @@ public class VentanaT extends JFrame {
 		 pcount=0;
 		 pacount=0;
 		 potcount=0;
+		// Personaje.monedero = 100;
 	
 		JPanel main = new JPanel();
 		main.setLayout(new GridLayout(5, 1));
 		
 		JPanel juego = new JPanel();
 		main.add(juego, BorderLayout.SOUTH);
-		Label l1 = new Label("Tu dinero: "+Personaje.monedero);//El que muestre el stock
-		juego.add(l1);
+		
 		/*
 		JLabel bar = new JLabel();
 		main.add(bar, BorderLayout.SOUTH);
@@ -69,6 +69,7 @@ public class VentanaT extends JFrame {
 				if(Personaje.monedero >= 30)
 				{
 				Personaje.monedero -=30;
+				Personaje.actualizarm();
 				vcount++;
 				System.out.println(Personaje.monedero);
 				}
@@ -86,6 +87,7 @@ public class VentanaT extends JFrame {
 				if(Personaje.monedero >= 20) 
 				{
 				Personaje.monedero -=20;
+				Personaje.actualizarm();
 				pacount++;
 				}
 				else 
@@ -103,6 +105,7 @@ public class VentanaT extends JFrame {
 				if(Personaje.monedero >= 40) 
 				{
 				Personaje.monedero -=40;
+				Personaje.actualizarm();
 				potcount++;
 				}
 				else 
@@ -119,6 +122,7 @@ public class VentanaT extends JFrame {
 				if(Personaje.monedero >= 30)
 				{	
 				Personaje.monedero -=30;	
+				Personaje.actualizarm();
 				pcount++;
 				}
 				else 
@@ -128,7 +132,8 @@ public class VentanaT extends JFrame {
 			}
 		}
 		);
-		
+		Label l1 = new Label("Tu dinero: "+Personaje.monedero);//El que muestre el stock
+		juego.add(l1);
 	}
 
 	
