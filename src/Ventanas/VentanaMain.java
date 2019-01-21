@@ -147,8 +147,8 @@ public class VentanaMain extends JFrame{
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				VentanaComp v1 = new VentanaComp();
-				v1.setSize(1000, 600);
+				VentComp v1 = new VentComp();
+				v1.setSize(1980, 1020);
 				v1.setVisible(true);
 				v1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 				v1.setTitle("RogeLike Dungeons");
