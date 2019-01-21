@@ -6,6 +6,7 @@ import Clases.Sala;
 import PJ.Enemigo;
 import PJ.Personaje;
 import PJ.TEnemigos;
+import Ventanas.VentComp;
 import Ventanas.VentanaComp;
 
 //Metodo sala de combate
@@ -46,6 +47,7 @@ public class CombateMethod extends Sala
 				}
 				atacaenemigo =0;
 				Personaje.hp -= dmg;
+				VentComp.actualizar();
 			}
 		}
 		

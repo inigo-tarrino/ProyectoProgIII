@@ -178,7 +178,14 @@ public class VentComp extends JFrame{
 		Botones.add(n5);
 //		Botones.add(n6);
 		
+		int min, max;
+		min = 0;
+		max = 100;
 		
+		Personaje.hp = 100;
+		pb = new JProgressBar(min, max);
+		pb.setValue(Personaje.hp);
+		info.add(pb);
 		
 		n3.addActionListener(new ActionListener()
 		{
@@ -458,5 +465,8 @@ public class VentComp extends JFrame{
 		t1.setVisible(true);
 		t1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		t1.setTitle("RogeLike Dungeons");
+	}
+	public static void actualizar() {
+		pb.setValue(Personaje.hp);
 	}
 }
